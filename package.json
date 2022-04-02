@@ -1,0 +1,29 @@
+{
+  "name": "profile-rest",
+  "version": "1.0.0",
+  "description": "This project for recruitment process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:up": "db-migrate up -m app/database/migrations/ initialize",
+    "migrate:down": "db-migrate down -m app/database/migrations/ initialize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IPKIN9/Profile-REST.git"
+  },
+  "keywords": [
+    "rest",
+    "API",
+    "NodeJs"
+  ],
+  "author": "Irwandi Paputungan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IPKIN9/Profile-REST/issues"
+  },
+  "homepage": "https://github.com/IPKIN9/Profile-REST#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
