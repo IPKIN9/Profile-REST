@@ -6,6 +6,22 @@ Here is the documentation of how to run this application
 
 <br />
 
+## Environment
+
+<br />
+
+Do not forget change database.json first before you migrate
+
+<br />
+
+And inside in
+
+```bash
+app/config/connection.js
+```
+
+<br />
+
 ## System requirements
 
 <br />
