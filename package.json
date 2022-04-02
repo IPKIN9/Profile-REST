@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate:up": "db-migrate up -m app/database/migrations/ initialize",
-    "migrate:down": "db-migrate down -m app/database/migrations/ initialize"
+    "migrate:down": "db-migrate down -m app/database/migrations/ initialize",
+    "serve": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,12 @@
   },
   "homepage": "https://github.com/IPKIN9/Profile-REST#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
