@@ -1,50 +1,50 @@
 # Read this documentation
-</br>
+<br />
 Here is the documentation of how to run this application
-</br>
+<br />
 ## System requirements
-</br>
+<br />
 Node version V16.14.2
-</br>
+<br />
 Npm version 8.5.0
-</br>
+<br />
 ## How to create table with migration
-</br>
+<br />
 ```bash
 npm run migrate:up
 ```
-</br>
+<br />
 ## Run your server
-</br>
+<br />
 ```bash
 npm run serve
 ```
-</br>
+<br />
 ## Endpoint testing
-</br>
+<br />
 Please use postman or the like
-</br>
+<br />
 To "GET" all province Data
-</br>
+<br />
 ```bash
 http://localhost:3000/province
 ```
-</br>
+<br />
 To "GET" by Id province Data put your id after '/'
-</br>
+<br />
 ```bash
 http://localhost:3000/province/1
 ```
-</br>
+<br />
 POST data
 {
     "province_name":"your province"
 }
-</br>
+<br />
 ```bash
 http://localhost:3000/province
 ```
-</br>
+<br />
 PATCH data
 do not forget replace your current id after "/"
 {
