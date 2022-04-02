@@ -1,5 +1,6 @@
 const db = require('../config/connection');
 const query = require('../models/province');
+const { validationResult } = require('express-validator');
 
 exports.getAllData = (req, res, next) => {
     db.query(query.getAll, (err, result) => {
@@ -23,15 +24,22 @@ exports.getByIdData = (req, res, next) => {
   })
 }
 
-exports.createData = (req, res, next) => {
-    db.query(query.post, [req.body.province_name], (err, result) => {
-        if (err) {
-            return next(err)
-        }
-        res.status(200).json({
-            message: "Data success to crated"
-        });
-    })
+exports.createData =  (req, res, next) => {
+    const errors = validationResult(req);
+    console.log(req.body);
+
+    if (!errors.isEmpty()) {
+      return res.status(422).jsonp(errors.array());
+    } else {
+        db.query(query.post, [req.body.province_name], (err, result) => {
+            if (err) {
+                return next(err)
+            }
+            res.status(200).json({
+                message: "Data success to crated"
+            });
+        })
+    }
 }
 
 exports.updateData = (req, res, next) => {
@@ -40,7 +48,9 @@ exports.updateData = (req, res, next) => {
         if (err) {
             return next(err)
         }
-        res.status(200).json({
+        if (result.rows == 0) {
+            res.status(404).json({message: "Data not found"})
+        } res.status(200).json({
             message: "Data success to crated"
         });
     });
@@ -52,7 +62,9 @@ exports.deletingData = (req, res, next) => {
         if (err) {
             return next(err)
         }
-        res.status(200).json({
+        if (result.rows == 0) {
+            res.status(404).json({message: "Data not found"})
+        } res.status(200).json({
             message: "Deleted"
         });
     });
